@@ -1,0 +1,7 @@
+The first three lines contain number of machines, number of block rows and number of block columns, respectively.
+
+The next block of data has 4 columns separated by space. First column is the starting block, second one is ending block, third one is flow amount and fourth is unit flow cost per 10m (refer to the first table in IllustrationData.pdf, it has the same structure).
+
+The final block of data has as many rows as blocks and as many columns as machines. Every value in this block represents the setup cost of a machine in the corresponding block (e.g, the value in the ith row and jth column is the setup cost of machine j in block i).
+
+The idea is that your code first reads a file with this structure and then executes your method. This way we can also test the algorithm with other datasets which are not posted.

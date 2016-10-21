@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		97A098B81DA83B58003FBE36 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97A098B71DA83B58003FBE36 /* main.cpp */; };
+		97A098C01DA867C7003FBE36 /* machine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97A098BE1DA867C7003FBE36 /* machine.cpp */; };
+		97BC1AA21DB866C9000E4E22 /* factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97BC1AA01DB866C9000E4E22 /* factory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,16 @@
 /* Begin PBXFileReference section */
 		97A098B41DA83B58003FBE36 /* IEMS313Phase1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IEMS313Phase1; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A098B71DA83B58003FBE36 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		97A098BE1DA867C7003FBE36 /* machine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = machine.cpp; sourceTree = "<group>"; };
+		97A098BF1DA867C7003FBE36 /* machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = machine.h; sourceTree = "<group>"; };
+		97A098C11DAB3DC8003FBE36 /* DataSet1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DataSet1.txt; path = Data/DataSet1.txt; sourceTree = "<group>"; };
+		97A098C21DAB3DC8003FBE36 /* DataSet2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DataSet2.txt; path = Data/DataSet2.txt; sourceTree = "<group>"; };
+		97A098C31DAB3DC8003FBE36 /* DataSet3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DataSet3.txt; path = Data/DataSet3.txt; sourceTree = "<group>"; };
+		97A098C41DAB3DC8003FBE36 /* DataSet4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DataSet4.txt; path = Data/DataSet4.txt; sourceTree = "<group>"; };
+		97A098C51DAB3DC8003FBE36 /* Illustration_Data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Illustration_Data.txt; path = Data/Illustration_Data.txt; sourceTree = "<group>"; };
+		97A098C71DAB4066003FBE36 /* dataset_instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dataset_instructions.txt; path = Data/dataset_instructions.txt; sourceTree = "<group>"; };
+		97BC1AA01DB866C9000E4E22 /* factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = factory.cpp; sourceTree = "<group>"; };
+		97BC1AA11DB866C9000E4E22 /* factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,27 @@
 		97A098B61DA83B58003FBE36 /* IEMS313Phase1 */ = {
 			isa = PBXGroup;
 			children = (
+				97A098C61DAB3DDD003FBE36 /* Data */,
 				97A098B71DA83B58003FBE36 /* main.cpp */,
+				97A098BE1DA867C7003FBE36 /* machine.cpp */,
+				97BC1AA01DB866C9000E4E22 /* factory.cpp */,
+				97BC1AA11DB866C9000E4E22 /* factory.h */,
+				97A098BF1DA867C7003FBE36 /* machine.h */,
 			);
 			path = IEMS313Phase1;
+			sourceTree = "<group>";
+		};
+		97A098C61DAB3DDD003FBE36 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				97A098C71DAB4066003FBE36 /* dataset_instructions.txt */,
+				97A098C11DAB3DC8003FBE36 /* DataSet1.txt */,
+				97A098C21DAB3DC8003FBE36 /* DataSet2.txt */,
+				97A098C31DAB3DC8003FBE36 /* DataSet3.txt */,
+				97A098C41DAB3DC8003FBE36 /* DataSet4.txt */,
+				97A098C51DAB3DC8003FBE36 /* Illustration_Data.txt */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A098B81DA83B58003FBE36 /* main.cpp in Sources */,
+				97BC1AA21DB866C9000E4E22 /* factory.cpp in Sources */,
+				97A098C01DA867C7003FBE36 /* machine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +271,7 @@
 				97A098BD1DA83B58003FBE36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
