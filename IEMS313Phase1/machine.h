@@ -14,29 +14,30 @@
 
 class Machine;
 
-class Flow
+struct Flow
 {
-private:
     Machine* to_machine;
     int to_machine_num;
     int amount;
     float cost; // per unit distance
-public:
-    Flow(Machine* to_machine, int to_machine_num, int amount, float cost);
 };
 
 class Machine {
 private:
+    int machine_num;
     std::vector<int> set_up_costs;
     std::vector<Flow*> flows;
-    //int region;
+    int region;
 public:
-    Machine(int num_regions) : set_up_costs(num_regions, 0) {}; // using vector constructor
+    Machine(int num_regions, int machine_num_)
+        :   set_up_costs(num_regions, 0), // using vector constructor
+            machine_num(machine_num_) {};
     ~Machine();
     void add_flow(Machine* to_machine, int to_machine_num, int amount, float cost);
-    void add_set_up_cost(int region, int cost);
-    //void set_region(int region);
+    void add_set_up_cost(int reg, int cost);
+    void set_region(int reg);
     //int get_region();
+    friend class Factory;
 };
 
 #endif /* machine_h */

@@ -49,7 +49,7 @@ Factory* file_io(ifstream* inptr)
     vector<Machine*> machines(num_machines);
     for (int i = 0; i < num_machines; i++)
     {
-        machines[i] = new Machine(num_regions);
+        machines[i] = new Machine(num_regions, i + 1);
     }
     
     
@@ -106,6 +106,12 @@ int main(int argc, const char * argv[]) {
     // read in file and assign data to machines
     Factory* myfactory;
     myfactory = file_io(inptr);
+    
+    // for each machine, sort flows by unit cost * amount of flow
+    myfactory->sort_flows();
+    
+    myfactory->set_region(1, 1, 1);
+    myfactory->set_region_at_dist(1, 1, 1, 0);
     
 
     // start with machine has the most outgoing flows, place it the middle
