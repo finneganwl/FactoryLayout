@@ -8,17 +8,6 @@
 
 #include "machine.h"
 
-/*
-Flow::Flow(Machine* to_mach, int to_mach_num, int amt, float cst)
-{
-    to_machine = to_mach;
-    to_machine_num = to_mach_num;
-    amount = amt;
-    cost = cst;
-}
- */
-
-
 Machine::~Machine()
 {
     for (int i = 0; i < flows.size(); i++)
@@ -48,9 +37,27 @@ void Machine::set_region(int reg)
     region = reg;
 }
 
-/*
 int Machine::get_region()
 {
     return region;
 }
- */
+
+bool Machine::region_is_set()
+{
+    return region != -1;
+}
+
+std::vector<Flow*> Machine::get_flows()
+{
+    return flows;
+}
+
+int Machine::get_machine_num()
+{
+    return machine_num;
+}
+
+float Machine::get_set_up_cost()
+{
+    return set_up_costs[region-1];
+}

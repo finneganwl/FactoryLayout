@@ -14,20 +14,6 @@
 
 using namespace std;
 
-/**
- * calculates manhattan distance from start to end in a rectangular region
- *
- * width is width of region
- * from_region and to region refer to region numbers starting at 1 in top left corner
- * increasing left to right, then top to bottom
- */
-int manh_dist(int from_region, int to_region, int width)
-{
-    int x_dist = abs(from_region - to_region) % width;
-    int y_dist = abs(from_region - to_region) / width; // floor division
-    return x_dist + y_dist;
-}
-
 Factory* file_io(ifstream* inptr)
 {
     // read in first block of data
@@ -38,11 +24,6 @@ Factory* file_io(ifstream* inptr)
     *inptr >> height;
     *inptr >> width;
     int num_regions = height * width;
-    
-    // skip newlines between data blocks
-    char ch;
-    inptr->get(ch);
-    inptr->get(ch);
     
     // initialize vector of machines
     // machine 1 is stored in machines[0] !!!
@@ -58,8 +39,15 @@ Factory* file_io(ifstream* inptr)
     int to_machine_num;
     int flow_amount;
     float flow_cost;
+    
+    // skip newlines between data blocks
+    char ch;
     inptr->get(ch);
-    while (ch != '\n')
+    while (ch == '\n' || ch == '\r') {
+        inptr->get(ch);
+    }
+    
+    while (ch != '\n' && ch != '\r')
     {
         inptr->unget();
         
@@ -71,6 +59,10 @@ Factory* file_io(ifstream* inptr)
         machines[from_machine_num-1]->add_flow(machines[to_machine_num - 1], to_machine_num,flow_amount, flow_cost);
         
         inptr->get(ch); // block ends in 2 newlines
+        if (ch == '\r') {
+            // make it work for windows or unix line endings
+            inptr->get(ch);
+        }
         inptr->get(ch);
     }
     
@@ -93,8 +85,8 @@ Factory* file_io(ifstream* inptr)
 
 
 int main(int argc, const char * argv[]) {
-    // open file
-    string fname = "Data/DataSet4.txt";
+    // open text containing data file
+    string fname = "Data/DataSet3.txt";
     ifstream* inptr = new ifstream;
     inptr->open(fname);
     if (inptr->fail())
@@ -103,22 +95,26 @@ int main(int argc, const char * argv[]) {
         return 1;
     }
     
-    // read in file and assign data to machines
+    // read in file and assign data to Factory object
     Factory* myfactory;
     myfactory = file_io(inptr);
     
     // for each machine, sort flows by unit cost * amount of flow
     myfactory->sort_flows();
     
-    myfactory->set_region(1, 1, 1);
-    myfactory->set_region_at_dist(1, 1, 1, 0);
+    // assign first machine to a region in the middle
+    myfactory->set_first_region(1);
     
-
-    // start with machine has the most outgoing flows, place it the middle
-    // sort list of outgoing machines by flow amount * cost (tiebreaker num outgoing flows)
-    // assign the first of the list to the feasible
+    // assign the machines that the first machine flows to to the regions
+    // closest to the first machine, starting with the machines with the
+    // most expensive flow. Continue this process for all machines
+    myfactory->set_all_other_regions();
     
+    myfactory->print_factory();
     
+    // get total cost of setup
+    float tot_cost = myfactory->get_total_cost();
+    cout << "Total cost = $" << fixed <<setprecision(2) << tot_cost << endl;;
     
     // deallocate memory
     delete myfactory;
