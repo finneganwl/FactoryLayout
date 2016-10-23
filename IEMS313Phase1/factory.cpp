@@ -7,13 +7,14 @@
 //
 
 #include "factory.h"
-
+/*
 Factory::~Factory() {
-    for (int i = 0; i < machines.size(); i++)
+    for (int i = 0; i < get_num_machines(); i++)
     {
         delete machines[i];
     }
 }
+ */
 
 /**
  * calculates manhattan distance from start to end in a rectangular region
@@ -22,8 +23,7 @@ Factory::~Factory() {
  * from_region and to region refer to region numbers starting at 1 in top left corner
  * increasing left to right, then top to bottom
  */
-int Factory::manh_dist(int from_region_num, int to_region_num)
-{
+int Factory::manh_dist(int from_region_num, int to_region_num) {
     Position from_pos = get_region_pos(from_region_num);
     Position to_pos = get_region_pos(to_region_num);
     int x_dist = std::abs(from_pos.x - to_pos.x);
@@ -47,7 +47,7 @@ bool Factory::more_expensive_flow(Flow* flow1, Flow* flow2) {
  * is the flow with the highest product of flow amount and flow cost
  */
 void Factory::sort_flows() {
-    for (int i = 0; i < machines.size(); i++) {
+    for (int i = 0; i < get_num_machines(); i++) {
         Machine* machine = machines[i];
         std::vector<Flow*> flows = machine->get_flows();
         std::sort(flows.begin(), flows.end(), more_expensive_flow);
@@ -60,12 +60,12 @@ void Factory::sort_flows() {
  * left to right, then top to bottom
  */
 int Factory::get_region_num(int x, int y) {
-    return y * this->width + x + 1;
+    return y * width + x + 1;
 }
 
 Position Factory::get_region_pos(int region_num) {
-    int x = (region_num-1) % this->width;
-    int y = (region_num-1) / this->width;
+    int x = (region_num-1) % width;
+    int y = (region_num-1) / width;
     Position pos;
     pos.x = x;
     pos.y = y;
@@ -73,9 +73,9 @@ Position Factory::get_region_pos(int region_num) {
 }
 
 void Factory::set_region(int x, int y, int machine_num) {
-    Machine* machine = this->machines[machine_num-1];
-    machine->set_region(this->get_region_num(x,y));
-    this->regions[y][x] = machine;
+    Machine* machine = machines[machine_num-1];
+    machine->set_region(get_region_num(x,y));
+    regions[y][x] = machine;
 }
 
 void Factory::set_first_region(int machine_num) {
@@ -110,7 +110,7 @@ int Factory::find_machine_to_set(Machine* center_machine, int num_set, int max_n
 int Factory::set_region_at_dist(int center_x, int center_y, Machine* center_machine, int dist, int num_set, int max_num_set) {
     // go through all points of manhattan distance dist from center
     for (int x = center_x - dist; x <= center_x + dist; x++) {
-        if (x >= this->width || x < 0) {
+        if (x >= width || x < 0) {
             continue;
         }
         int y_dist = dist - std::abs(center_x-x);
@@ -124,7 +124,7 @@ int Factory::set_region_at_dist(int center_x, int center_y, Machine* center_mach
         }
         Machine* to_machine = center_machine->get_flows()[num_set]->to_machine;
         
-        if (upper_y >= 0 && this->regions[upper_y][x] == nullptr) {
+        if (upper_y >= 0 && regions[upper_y][x] == nullptr) {
             set_region(x, upper_y, to_machine->get_machine_num());
             num_set++;
         }
@@ -136,7 +136,7 @@ int Factory::set_region_at_dist(int center_x, int center_y, Machine* center_mach
         }
         to_machine = center_machine->get_flows()[num_set]->to_machine;
         // third condition because if y_dist == 0 , lower_y and upper_y are same
-        if (lower_y < this->height && this->regions[lower_y][x] == nullptr && y_dist != 0) {
+        if (lower_y < height && regions[lower_y][x] == nullptr && y_dist != 0) {
             set_region(x, lower_y, to_machine->get_machine_num());
             num_set++;
         }
@@ -167,7 +167,7 @@ void Factory::set_regions_flows_to(int center_x, int center_y) {
  * Sets regions for all other machines assuming one machine has already been placed
  */
 void Factory::set_all_other_regions() {
-    int num_machines = machines.size();
+    int num_machines = get_num_machines();
     std::vector<bool> done_machines(num_machines, false);
     
     bool done_with_all = false;
@@ -176,24 +176,11 @@ void Factory::set_all_other_regions() {
                             // or if we start on machine with no out flows.
                             // backup plan is to assign another one and then try again
     while (done_with_all == false) {
+        // backup plan
         if (num_iterations > num_machines) {
-            // if in backup plan, assign first unassigned machine to first unavailable region
-            for (int i = 0; i < num_machines; i++) {
-                if (!machines[i] -> region_is_set()) {
-                    for (int x = 0; x < this->width; x++) {
-                        for (int y = 0; y < this->height; y++) {
-                            if (this->regions[y][x] == nullptr) {
-                                set_region(x, y, machines[i]->get_machine_num());
-                                num_iterations = 0;
-                                std::cout << "THAT WEIRD CASE" << std::endl;
-                                goto finish;
-                            }
-                        }
-                    }
-                }
-            }
+            backup_assignment_plan();
+            num_iterations = 0;
         }
-        finish:
         // only set surrounding machines of a machine if it's already been placed
         for (int i = 0; i < num_machines; i++) {
             if (!done_machines[i] && machines[i]->region_is_set()) {
@@ -217,7 +204,7 @@ void Factory::set_all_other_regions() {
 float Factory::get_total_cost() {
     float total_cost = 0;
     // for each machine
-    for (int i = 0; i < machines.size(); i++) {
+    for (int i = 0; i < get_num_machines(); i++) {
         // add outgoing flow costs
         std::vector<Flow*> flows = machines[i]->get_flows();
         for (int j = 0; j < flows.size(); j++) {
@@ -243,5 +230,109 @@ void Factory::print_factory() {
         }
         std::cout << std::endl;
     }
+}
+
+void Factory::print_total_cost() {
+    // display total cost of setup
+    float tot_cost = get_total_cost();
+    std::cout << "Total cost = $" << std::fixed << std::setprecision(2) << tot_cost << std::endl;
+}
+
+void Factory::switch_machines(Machine* machine1, Machine* machine2) {
+    // assign machine 2 to position 1 and vice versa
+    int region_num1 = machine1->get_region();
+    int region_num2 = machine2->get_region();
+    Position pos1 = get_region_pos(region_num1);
+    Position pos2 = get_region_pos(region_num2);
+    set_region(pos1.x, pos1.y, machine2->get_machine_num());
+    set_region(pos2.x, pos2.y, machine1->get_machine_num());
+}
+
+void Factory::switch_all_machines() {
+    // switch pairs of machines until switching no longer decreases cost
+    bool decreased_cost = true;
+    float best_cost = get_total_cost();
+    
+    // limit algorithm to n cubed time (n = number of machines)
+    int num_iterations = 0;
+    int num_machines = get_num_machines();
+    while (decreased_cost && num_iterations < num_machines) {
+        decreased_cost = false;
+        for (int i = 0; i < num_machines; i++) {
+            for (int j = i+1; j < num_machines; j++) {
+                // try switching each pair of machines
+                switch_machines(machines[i], machines[j]);
+                float new_cost = get_total_cost();
+                
+                // if decreased total cost, keep
+                if (new_cost < best_cost) {
+                    best_cost = new_cost;
+                    decreased_cost = true;
+                    //std::cout << "Switched machines " << i + 1 << " and " << j + 1 << std::endl;
+                    //print_factory();
+                    //print_total_cost();
+                    //std::cout << "--------------------------" << std::endl << std::endl;
+                }
+                // else switch it back
+                else {
+                    switch_machines(machines[i], machines[j]);
+                }
+            }
+        }
+        num_iterations++;
+    }
+    //std::cout << "num iterations " << num_iterations << std::endl;
+}
+
+// standard assignment logic below assumes all machines are connected eventually
+// may loop infinitely if this is not the case
+// or if we start on machine with no out flows.
+// backup plan is to assign another one and then try again
+void Factory::backup_assignment_plan() {
+    // if in backup plan, assign first unassigned machine
+    // to first unavailable region string with the middle
+    for (int i = 0; i < get_num_machines(); i++) {
+        if (!machines[i] -> region_is_set()) {
+            for (int x = width/2; x < width; x++) {
+                for (int y = height/2; y < height; y++) {
+                    if (regions[y][x] == nullptr) {
+                        set_region(x, y, machines[i]->get_machine_num());
+                        //std::cout << "BACKUP PLAN A ENGAGED" << std::endl;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    
+    //if plan a fails
+    // just put it the first available spot
+    for (int i = 0; i < get_num_machines(); i++) {
+        if (!machines[i] -> region_is_set()) {
+            for (int x = 0; x < width; x++) {
+                for (int y = 0; y < height; y++) {
+                    if (regions[y][x] == nullptr) {
+                        set_region(x, y, machines[i]->get_machine_num());
+                        //std::cout << "BACKUP PLAN B ENGAGED" << std::endl;
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Factory::reset_regions() {
+    for (int i = 0; i < get_num_machines(); i++) {
+        int region_num = machines[i]->get_region();
+        Position pos = get_region_pos(region_num);
+        machines[i]->set_region(-1);
+        regions[pos.y][pos.x] = nullptr;
+    }
+}
+
+int Factory::get_num_machines() {
+    int size = machines.size();
+    return size;
 }
 

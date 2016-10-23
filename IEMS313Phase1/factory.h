@@ -37,13 +37,15 @@ private:
     int set_region_at_dist(int center_x, int center_y, Machine* center_machine, int dist, int num_set, int max_num_set);
     void set_regions_flows_to(int center_x, int center_y);
     int manh_dist(int from_region_num, int to_region_num);
+    void switch_machines(Machine* machine1, Machine* machine2);
+    void backup_assignment_plan();
     
 public:
     Factory(int height_, int width_, std::vector<Machine*> machines_)
         :   regions(height_, std::vector<Machine*>(width_)),
             height(height_), width(width_),
             machines(machines_) {};
-    ~Factory();
+    //~Factory();
     void sort_flows();
     int get_region_num(int x, int y);
     Position get_region_pos(int region_num);
@@ -51,6 +53,10 @@ public:
     void set_all_other_regions();
     float get_total_cost();
     void print_factory();
+    void print_total_cost();
+    void switch_all_machines();
+    void reset_regions();
+    int get_num_machines();
 };
 
 #endif /* factory_h */
