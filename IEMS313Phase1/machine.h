@@ -43,7 +43,6 @@ public:
     std::vector<Flow*> get_flows();
     int get_machine_num();
     float get_set_up_cost();
-    //friend class Factory;
 };
 
 #endif /* machine_h */

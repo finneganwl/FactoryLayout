@@ -46,7 +46,6 @@ Factory* file_io(ifstream* inptr)
     while (ch == '\n' || ch == '\r') {
         inptr->get(ch);
     }
-    
     while (ch != '\n' && ch != '\r')
     {
         inptr->unget();
@@ -89,7 +88,7 @@ int main(int argc, const char * argv[]) {
         return 1;
     }
     
-    // open text containing data file
+    // open text file containing data
     string fname = argv[1];
     ifstream* inptr = new ifstream;
     inptr->open(fname);
@@ -106,11 +105,11 @@ int main(int argc, const char * argv[]) {
     // for each machine, sort flows by unit cost * amount of flow
     myfactory->sort_flows();
     
-    // loop through all machines for starting machine
+    // loop through each machine as the starting machine
     Factory best_factory = *myfactory;
     float best_cost = -1;
     for (int i = 0; i < myfactory->get_num_machines(); i++) {
-        // assign starting machine to a region in the middle
+        // assign starting machine to a region in the middle of the factory
         myfactory->set_first_region(i+1);
         cout << "Starting with machine " << i+1 << endl;
         myfactory->print_factory();
@@ -128,7 +127,7 @@ int main(int argc, const char * argv[]) {
         cout << "--------------------------" << endl << endl;
         
         // if switching two machines' locations would decrease total price, make the switch
-        // continue this process until price converges (i.e. switching no longer helps)
+        // continue this process until price converges (i.e. switching no longer decreases price)
         myfactory->switch_all_machines();
         
         cout << "Setup after switching:" << endl;
@@ -136,7 +135,7 @@ int main(int argc, const char * argv[]) {
         myfactory->print_total_cost();
         cout << "--------------------------" << endl << endl;
         
-        // keep the factory has the lowest cost of all the starting machines
+        // keep the factory that has the lowest cost of all the starting machines
         float cost_after_switches = myfactory->get_total_cost();
         if (best_cost == -1 || cost_after_switches < best_cost) {
             best_factory = *myfactory;

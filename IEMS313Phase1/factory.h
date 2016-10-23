@@ -29,7 +29,7 @@ private:
     int width;
     std::vector<Machine*> machines;
     std::vector< std::vector<Machine*> > regions;
-    bool PRINT = true;
+    bool PRINT;
     
     // helper functions
     static bool more_expensive_flow(Flow* flow1, Flow* flow2);
@@ -53,15 +53,51 @@ public:
                 PRINT = true;
                 }
             };
-    //~Factory();
+    
+    /**
+     * Sorts list of flows for each machines so that the first flow in each list
+     * is the flow with the largest product of flow amount and flow cost
+     */
     void sort_flows();
+    
+    /**
+     * Converts zero indexed x y coordinates to region number
+     * region numbers start at one in top left corner and increase
+     * left to right, then top to bottom
+     */
     int get_region_num(int x, int y);
+    
+    /**
+     * Reverse of get_region_num
+     */
     Position get_region_pos(int region_num);
+    
+    /**
+     * Sets the machine with number machine_num to the region in the middle of the factory
+     * or closest to it if dimensions are even
+     */
     void set_first_region(int machine_num);
+    
+    /**
+     * Sets regions for all other machines assuming one machine has already been placed/
+     * Sets the machines that are flowed to by the already set machines quasi recursively,
+     * If can't set them in this way, defaults by setting them close to the middle
+     */
     void set_all_other_regions();
+    
+    /**
+     * Returns sum of set up and flow costs for all machines
+     */
     float get_total_cost();
+    
     void print_factory();
     void print_total_cost();
+    
+    /**
+     * For all pairs of machines, checks if swapping them would decrease total cost.
+     * If so makes the switch. Continues until no switches result in decrease or 
+     * algorithm times out
+     */
     void switch_all_machines();
     void reset_regions();
     int get_num_machines();

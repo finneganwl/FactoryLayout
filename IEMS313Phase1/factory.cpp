@@ -7,14 +7,6 @@
 //
 
 #include "factory.h"
-/*
-Factory::~Factory() {
-    for (int i = 0; i < get_num_machines(); i++)
-    {
-        delete machines[i];
-    }
-}
- */
 
 /**
  * calculates manhattan distance from start to end in a rectangular region
@@ -42,10 +34,6 @@ bool Factory::more_expensive_flow(Flow* flow1, Flow* flow2) {
     return cost1 > cost2;
 }
 
-/*
- * Sorts list of flows for each machines so that the first flow in each list
- * is the flow with the highest product of flow amount and flow cost
- */
 void Factory::sort_flows() {
     for (int i = 0; i < get_num_machines(); i++) {
         Machine* machine = machines[i];
@@ -54,11 +42,6 @@ void Factory::sort_flows() {
     }
 }
 
-/*
- * Converts zero indexed x y coordinates to region number
- * region numbers start at one in top left corner and increase
- * left to right, then top to bottom
- */
 int Factory::get_region_num(int x, int y) {
     return y * width + x + 1;
 }
@@ -81,7 +64,6 @@ void Factory::set_region(int x, int y, int machine_num) {
 void Factory::set_first_region(int machine_num) {
     int x = width / 2;
     int y = height / 2;
-    //int machine_num = 1;
     set_region(x, y, machine_num);
 }
 
@@ -155,7 +137,7 @@ void Factory::set_regions_flows_to(int center_x, int center_y) {
     int dist = 1;
     while (num_set < num_out_flows) {
         int num_new = set_region_at_dist(center_x, center_y, center_machine, dist, num_set, num_out_flows);
-        if (PRINT) {
+        if (Factory::PRINT) {
             std::cout << "Adding machines that machine " << center_machine->get_machine_num() << " flows to" << std::endl;
             print_factory();
             std::cout << "---------------------------" << std::endl;
@@ -165,13 +147,9 @@ void Factory::set_regions_flows_to(int center_x, int center_y) {
     }
 }
 
-/*
- * Sets regions for all other machines assuming one machine has already been placed
- */
 void Factory::set_all_other_regions() {
     int num_machines = get_num_machines();
     std::vector<bool> done_machines(num_machines, false);
-    
     bool done_with_all = false;
     int num_iterations = 0; // logic below assumes all machines are connected eventually
                             // may loop infinitely if this is not the case
@@ -270,7 +248,7 @@ void Factory::switch_all_machines() {
                 if (new_cost < best_cost) {
                     best_cost = new_cost;
                     decreased_cost = true;
-                    if (PRINT) {
+                    if (Factory::PRINT) {
                         std::cout << "Switched machines " << i + 1 << " and " << j + 1 << std::endl;
                         //print_factory();
                         print_total_cost();
