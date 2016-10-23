@@ -85,7 +85,7 @@ Factory* file_io(ifstream* inptr)
 
 int main(int argc, const char * argv[]) {
     // open text containing data file
-    string fname = "Data/DataSet3.txt";
+    string fname = "Data/Illustration_Data.txt";
     ifstream* inptr = new ifstream;
     inptr->open(fname);
     if (inptr->fail())
@@ -101,37 +101,15 @@ int main(int argc, const char * argv[]) {
     // for each machine, sort flows by unit cost * amount of flow
     myfactory->sort_flows();
     
-    /*
-    // assign starting machine to a region in the middle
-    myfactory->set_first_region(1);
-    
-    // assign the machines that the first machine flows to to the regions
-    // closest to the first machine, starting with the machines with the
-    // most expensive flow. Continue this process for all machines
-    myfactory->set_all_other_regions();
-    
-    // display initial factory setup and its total cost
-    cout << "Initial setup" << endl;
-    myfactory->print_factory();
-    myfactory->print_total_cost();
-    cout << "--------------------------" << endl << endl;
-    
-    // if switching two machines' locations would decrease total price, make the switch
-    // continue this process until price converges (i.e. switching no longer helps)
-    myfactory->switch_all_machines();
-    
-    cout << "Best setup found:" << endl;
-    myfactory->print_factory();
-    myfactory->print_total_cost();
-     */
-    
-    
     // loop through all machines for starting machine
     Factory best_factory = *myfactory;
     float best_cost = -1;
     for (int i = 0; i < myfactory->get_num_machines(); i++) {
         // assign starting machine to a region in the middle
         myfactory->set_first_region(i+1);
+        cout << "Starting with machine " << i+1 << endl;
+        myfactory->print_factory();
+        cout << "--------------------------" << endl << endl;
         
         // assign the machines that the first machine flows to to the regions
         // closest to the first machine, starting with the machines with the
@@ -139,15 +117,19 @@ int main(int argc, const char * argv[]) {
         myfactory->set_all_other_regions();
         
         // display initial factory setup and its total cost
-        //cout << "Initial setup" << endl;
-        //myfactory->print_factory();
-        //myfactory->print_total_cost();
-        //cout << "--------------------------" << endl << endl;
-        cout << i+1 << endl;
+        cout << "Setup after initial assignment:" << endl;
+        myfactory->print_factory();
+        myfactory->print_total_cost();
+        cout << "--------------------------" << endl << endl;
         
         // if switching two machines' locations would decrease total price, make the switch
         // continue this process until price converges (i.e. switching no longer helps)
         myfactory->switch_all_machines();
+        
+        cout << "Setup after switching:" << endl;
+        myfactory->print_factory();
+        myfactory->print_total_cost();
+        cout << "--------------------------" << endl << endl;
         
         // keep the factory has the lowest cost of all the starting machines
         float cost_after_switches = myfactory->get_total_cost();
@@ -158,8 +140,8 @@ int main(int argc, const char * argv[]) {
         
         // reset so can try a new starting machine
         myfactory->reset_regions();
-        //cout << "Reseting Factory" << endl;
-        //cout << "--------------------------" << endl << endl;
+        cout << "Reseting Factory" << endl;
+        cout << "--------------------------" << endl << endl;
     }
     
     // display lowest cost solution found

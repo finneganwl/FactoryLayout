@@ -29,6 +29,7 @@ private:
     int width;
     std::vector<Machine*> machines;
     std::vector< std::vector<Machine*> > regions;
+    bool PRINT = true;
     
     // helper functions
     static bool more_expensive_flow(Flow* flow1, Flow* flow2);
@@ -44,7 +45,14 @@ public:
     Factory(int height_, int width_, std::vector<Machine*> machines_)
         :   regions(height_, std::vector<Machine*>(width_)),
             height(height_), width(width_),
-            machines(machines_) {};
+            machines(machines_)
+            {if (machines_.size() > 10) {
+                PRINT = false;
+            }
+            else {
+                PRINT = true;
+                }
+            };
     //~Factory();
     void sort_flows();
     int get_region_num(int x, int y);

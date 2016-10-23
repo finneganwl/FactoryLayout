@@ -155,9 +155,11 @@ void Factory::set_regions_flows_to(int center_x, int center_y) {
     int dist = 1;
     while (num_set < num_out_flows) {
         int num_new = set_region_at_dist(center_x, center_y, center_machine, dist, num_set, num_out_flows);
-        //std::cout << center_machine->get_machine_num() << std::endl;
-        //print_factory();
-        //std::cout << "---------------------------" << std::endl;
+        if (PRINT) {
+            std::cout << "Adding machines that machine " << center_machine->get_machine_num() << " flows to" << std::endl;
+            print_factory();
+            std::cout << "---------------------------" << std::endl;
+        }
         num_set += num_new;
         dist++;
     }
@@ -268,10 +270,12 @@ void Factory::switch_all_machines() {
                 if (new_cost < best_cost) {
                     best_cost = new_cost;
                     decreased_cost = true;
-                    //std::cout << "Switched machines " << i + 1 << " and " << j + 1 << std::endl;
-                    //print_factory();
-                    //print_total_cost();
-                    //std::cout << "--------------------------" << std::endl << std::endl;
+                    if (PRINT) {
+                        std::cout << "Switched machines " << i + 1 << " and " << j + 1 << std::endl;
+                        //print_factory();
+                        print_total_cost();
+                        std::cout << "--------------------------" << std::endl << std::endl;
+                    }
                 }
                 // else switch it back
                 else {
