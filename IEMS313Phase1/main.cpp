@@ -84,8 +84,13 @@ Factory* file_io(ifstream* inptr)
 }
 
 int main(int argc, const char * argv[]) {
+    if (argc != 2) {
+        cout << "Usage: ./phase1 <pathtofile.txt>" << endl;
+        return 1;
+    }
+    
     // open text containing data file
-    string fname = "Data/Illustration_Data.txt";
+    string fname = argv[1];
     ifstream* inptr = new ifstream;
     inptr->open(fname);
     if (inptr->fail())
