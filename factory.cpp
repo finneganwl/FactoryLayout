@@ -138,7 +138,7 @@ void Factory::set_regions_flows_to(int center_x, int center_y) {
     while (num_set < num_out_flows) {
         int num_new = set_region_at_dist(center_x, center_y, center_machine, dist, num_set, num_out_flows);
         if (Factory::PRINT) {
-            std::cout << "Adding machines that machine " << center_machine->get_machine_num() << " flows to" << std::endl;
+            std::cout << "Adding machines that machine " << center_machine->get_machine_num() << " flows to at a distance of " << dist << std::endl;
             print_factory();
             std::cout << "---------------------------" << std::endl;
         }
@@ -279,7 +279,11 @@ void Factory::backup_assignment_plan() {
                 for (int y = height/2; y < height; y++) {
                     if (regions[y][x] == nullptr) {
                         set_region(x, y, machines[i]->get_machine_num());
-                        //std::cout << "BACKUP PLAN A ENGAGED" << std::endl;
+                        if (PRINT) {
+                            std::cout << "No more machines to flow to, placing " << machines[i]->get_machine_num() << " near the center" << std::endl;
+                            print_factory();
+                            std::cout << "--------------------------" << std::endl << std::endl;
+                        }
                         return;
                     }
                 }
@@ -295,7 +299,9 @@ void Factory::backup_assignment_plan() {
                 for (int y = 0; y < height; y++) {
                     if (regions[y][x] == nullptr) {
                         set_region(x, y, machines[i]->get_machine_num());
-                        //std::cout << "BACKUP PLAN B ENGAGED" << std::endl;
+                        if (PRINT) {
+                            std::cout << "No more machines to flow to, placing " << machines[i]->get_machine_num() << " anywhere we can" << std::endl;
+                        }
                         return;
                     }
                 }

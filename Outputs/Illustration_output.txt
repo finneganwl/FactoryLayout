@@ -1,0 +1,1436 @@
+Starting with machine 1
+  .  .  .  .
+  .  .  .  .
+  .  .  1  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  7  .
+  .  6  1  .
+  .  .  8  .
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  7  .
+  9  6  1  .
+  .  .  8  .
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  . 10  7  .
+  9  6  1  .
+  .  .  8  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  . 10  7  .
+  9  6  1  .
+  .  .  8  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  . 10  7  .
+  9  6  1  .
+  .  .  8  .
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  . 10  7  .
+  9  6  1  2
+  .  .  8  .
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  . 10  7  3
+  9  6  1  2
+  .  .  8  4
+Total cost = $1973.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1968.00
+--------------------------
+
+Switched machines 2 and 8
+Total cost = $1871.00
+--------------------------
+
+Switched machines 3 and 5
+Total cost = $1787.00
+--------------------------
+
+Switched machines 4 and 5
+Total cost = $1744.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1712.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1694.00
+--------------------------
+
+Switched machines 1 and 10
+Total cost = $1672.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1668.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1664.00
+--------------------------
+
+Setup after switching:
+  .  .  . 10
+  .  1  7  4
+  6  9  3  8
+  .  .  5  2
+Total cost = $1664.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 2
+  .  .  .  .
+  .  .  .  .
+  .  .  2  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  4  .
+  .  3  2  6
+  .  .  5  .
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+  .  .  5  .
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+  .  7  5  .
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+  .  7  5  .
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+  .  7  5  .
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+  .  7  5  .
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  1
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  1
+---------------------------
+Setup after initial assignment:
+  .  .  .  .
+  .  9  4  .
+  8  3  2  6
+ 10  7  5  1
+Total cost = $2176.00
+--------------------------
+
+Switched machines 1 and 5
+Total cost = $2156.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $2144.00
+--------------------------
+
+Switched machines 1 and 9
+Total cost = $2068.00
+--------------------------
+
+Switched machines 2 and 6
+Total cost = $1977.00
+--------------------------
+
+Switched machines 2 and 9
+Total cost = $1952.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1943.00
+--------------------------
+
+Switched machines 3 and 5
+Total cost = $1854.00
+--------------------------
+
+Switched machines 3 and 10
+Total cost = $1728.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1686.00
+--------------------------
+
+Switched machines 1 and 7
+Total cost = $1627.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $1617.00
+--------------------------
+
+Switched machines 6 and 10
+Total cost = $1605.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1567.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1532.00
+--------------------------
+
+Switched machines 5 and 6
+Total cost = $1496.00
+--------------------------
+
+Switched machines 6 and 10
+Total cost = $1475.00
+--------------------------
+
+Setup after switching:
+  .  .  .  .
+  .  1 10  .
+  7  3  6  9
+  4  8  2  5
+Total cost = $1475.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 3
+  .  .  .  .
+  .  .  .  .
+  .  .  3  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+  .  7  3  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  .  6  1  .
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  9  6  1  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  .
+  9  6  1  .
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  8  .
+ 10  7  3  2
+  9  6  1  .
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  4
+ 10  7  3  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  .
+  .  .  8  4
+ 10  7  3  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  4
+ 10  7  3  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  4
+ 10  7  3  2
+  9  6  1  5
+---------------------------
+Setup after initial assignment:
+  .  .  .  .
+  .  .  8  4
+ 10  7  3  2
+  9  6  1  5
+Total cost = $1762.00
+--------------------------
+
+Switched machines 2 and 7
+Total cost = $1703.00
+--------------------------
+
+Switched machines 5 and 10
+Total cost = $1559.00
+--------------------------
+
+Switched machines 7 and 8
+Total cost = $1557.00
+--------------------------
+
+Setup after switching:
+  .  .  .  .
+  .  .  7  4
+  5  2  3  8
+  9  6  1 10
+Total cost = $1557.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 4
+  .  .  .  .
+  .  .  .  .
+  .  .  4  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+  .  7  4  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  .  6  1  .
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  9  6  1  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  .
+  9  6  1  .
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  8  .
+ 10  7  4  2
+  9  6  1  .
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  3
+ 10  7  4  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  .
+  .  .  8  3
+ 10  7  4  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  3
+ 10  7  4  2
+  9  6  1  5
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  .
+  .  .  8  3
+ 10  7  4  2
+  9  6  1  5
+---------------------------
+Setup after initial assignment:
+  .  .  .  .
+  .  .  8  3
+ 10  7  4  2
+  9  6  1  5
+Total cost = $1842.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1829.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1774.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1748.00
+--------------------------
+
+Switched machines 3 and 7
+Total cost = $1735.00
+--------------------------
+
+Switched machines 4 and 7
+Total cost = $1711.00
+--------------------------
+
+Switched machines 7 and 8
+Total cost = $1659.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1594.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1590.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1586.00
+--------------------------
+
+Setup after switching:
+  .  .  .  .
+  .  .  7  4
+ 10  1  3  8
+  9  6  5  2
+Total cost = $1586.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 5
+  .  .  .  .
+  .  .  .  .
+  .  .  5  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+  .  8  5  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  6  1  7
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  6  1  7
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  .
+  .  6  1  7
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  9  .
+ 10  8  5  2
+  .  6  1  7
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  3
+ 10  8  5  2
+  .  6  1  7
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  4
+  .  .  9  3
+ 10  8  5  2
+  .  6  1  7
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  4
+  .  .  9  3
+ 10  8  5  2
+  .  6  1  7
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  4
+  .  .  9  3
+ 10  8  5  2
+  .  6  1  7
+---------------------------
+Setup after initial assignment:
+  .  .  .  4
+  .  .  9  3
+ 10  8  5  2
+  .  6  1  7
+Total cost = $2287.00
+--------------------------
+
+Switched machines 1 and 6
+Total cost = $2193.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $2046.00
+--------------------------
+
+Switched machines 2 and 4
+Total cost = $2039.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $2001.00
+--------------------------
+
+Switched machines 2 and 6
+Total cost = $1985.00
+--------------------------
+
+Switched machines 2 and 9
+Total cost = $1977.00
+--------------------------
+
+Switched machines 3 and 7
+Total cost = $1970.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1930.00
+--------------------------
+
+Switched machines 7 and 8
+Total cost = $1908.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $1901.00
+--------------------------
+
+Switched machines 3 and 8
+Total cost = $1894.00
+--------------------------
+
+Switched machines 3 and 9
+Total cost = $1810.00
+--------------------------
+
+Switched machines 4 and 6
+Total cost = $1724.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1693.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1690.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $1628.00
+--------------------------
+
+Switched machines 1 and 10
+Total cost = $1526.00
+--------------------------
+
+Setup after switching:
+  .  .  .  5
+  .  . 10  9
+  1  7  8  6
+  .  3  4  2
+Total cost = $1526.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 6
+  .  .  .  .
+  .  .  .  .
+  .  .  6  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+  .  8  6  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  .
+  .  .  .  .
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  .
+  .  7  1  .
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  .
+  .  7  1  .
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  9  .
+ 10  8  6  2
+  .  7  1  .
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  .  .  9  3
+ 10  8  6  2
+  .  7  1  4
+Total cost = $2088.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $2048.00
+--------------------------
+
+Switched machines 1 and 6
+Total cost = $1875.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $1662.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1616.00
+--------------------------
+
+Switched machines 1 and 3
+Total cost = $1581.00
+--------------------------
+
+Setup after switching:
+  .  .  .  5
+  .  .  6  9
+ 10  3  8  2
+  .  7  1  4
+Total cost = $1581.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 7
+  .  .  .  .
+  .  .  .  .
+  .  .  7  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  .  6  1  8
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  9  6  1  8
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  9  6  1  8
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  7  .
+  9  6  1  8
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  7  2
+  9  6  1  8
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  3
+  . 10  7  2
+  9  6  1  8
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  .  .  4  3
+  . 10  7  2
+  9  6  1  8
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  7  2
+  9  6  1  8
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  7  2
+  9  6  1  8
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  7  2
+  9  6  1  8
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  .  .  4  3
+  . 10  7  2
+  9  6  1  8
+Total cost = $2106.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $1929.00
+--------------------------
+
+Switched machines 2 and 8
+Total cost = $1908.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1835.00
+--------------------------
+
+Switched machines 5 and 10
+Total cost = $1737.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1705.00
+--------------------------
+
+Switched machines 7 and 8
+Total cost = $1645.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1617.00
+--------------------------
+
+Switched machines 1 and 10
+Total cost = $1605.00
+--------------------------
+
+Setup after switching:
+  .  .  .  1
+  .  .  3  7
+  .  5  8  4
+  6  9  2 10
+Total cost = $1605.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 8
+  .  .  .  .
+  .  .  .  .
+  .  .  8  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  .  6  1  7
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  9  6  1  7
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  9  6  1  7
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  8  .
+  9  6  1  7
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  8  2
+  9  6  1  7
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  3
+  . 10  8  2
+  9  6  1  7
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  .  .  4  3
+  . 10  8  2
+  9  6  1  7
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  8  2
+  9  6  1  7
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  8  2
+  9  6  1  7
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  8  2
+  9  6  1  7
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  .  .  4  3
+  . 10  8  2
+  9  6  1  7
+Total cost = $2133.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $1956.00
+--------------------------
+
+Switched machines 2 and 4
+Total cost = $1919.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1891.00
+--------------------------
+
+Switched machines 2 and 10
+Total cost = $1855.00
+--------------------------
+
+Switched machines 3 and 7
+Total cost = $1848.00
+--------------------------
+
+Switched machines 5 and 8
+Total cost = $1788.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1756.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1727.00
+--------------------------
+
+Switched machines 1 and 5
+Total cost = $1639.00
+--------------------------
+
+Switched machines 1 and 4
+Total cost = $1618.00
+--------------------------
+
+Setup after switching:
+  .  .  . 10
+  .  .  8  1
+  .  5  4  7
+  6  9  2  3
+Total cost = $1618.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 9
+  .  .  .  .
+  .  .  .  .
+  .  .  9  .
+  .  .  .  .
+--------------------------
+
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  .  .  .  .
+---------------------------
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  .  6  1  7
+---------------------------
+Adding machines that machine 1 flows to at a distance of 2
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  . 10  9  .
+  8  6  1  7
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  .  .
+  . 10  9  2
+  8  6  1  7
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  3
+  . 10  9  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  .  .  4  3
+  . 10  9  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  9  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  9  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  . 10  9  2
+  8  6  1  7
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  .  .  4  3
+  . 10  9  2
+  8  6  1  7
+Total cost = $2563.00
+--------------------------
+
+Switched machines 1 and 6
+Total cost = $2469.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $2307.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $2130.00
+--------------------------
+
+Switched machines 2 and 4
+Total cost = $2093.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $2065.00
+--------------------------
+
+Switched machines 3 and 6
+Total cost = $1974.00
+--------------------------
+
+Switched machines 3 and 7
+Total cost = $1955.00
+--------------------------
+
+Switched machines 4 and 5
+Total cost = $1931.00
+--------------------------
+
+Switched machines 4 and 6
+Total cost = $1890.00
+--------------------------
+
+Switched machines 4 and 9
+Total cost = $1872.00
+--------------------------
+
+Switched machines 4 and 10
+Total cost = $1860.00
+--------------------------
+
+Switched machines 5 and 6
+Total cost = $1816.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1783.00
+--------------------------
+
+Switched machines 7 and 8
+Total cost = $1732.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1690.00
+--------------------------
+
+Switched machines 2 and 6
+Total cost = $1637.00
+--------------------------
+
+Switched machines 3 and 4
+Total cost = $1602.00
+--------------------------
+
+Setup after switching:
+  .  .  .  5
+  .  .  6  9
+  .  3 10  2
+  1  7  8  4
+Total cost = $1602.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Starting with machine 10
+  .  .  .  .
+  .  .  .  .
+  .  . 10  .
+  .  .  .  .
+--------------------------
+
+No more machines to flow to, placing 1 near the center
+  .  .  .  .
+  .  .  .  .
+  .  . 10  .
+  .  .  1  .
+--------------------------
+
+Adding machines that machine 1 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  .  . 10  .
+  .  6  1  7
+---------------------------
+Adding machines that machine 1 flows to at a distance of 2
+  .  .  .  .
+  .  .  .  .
+  .  . 10  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 6 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  .  9 10  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 7 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  .  9 10  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 8 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  .  9 10  .
+  8  6  1  7
+---------------------------
+Adding machines that machine 9 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  .
+  .  9 10  .
+  8  6  1  7
+---------------------------
+No more machines to flow to, placing 2 near the center
+  .  .  .  .
+  .  .  .  .
+  .  9 10  2
+  8  6  1  7
+--------------------------
+
+Adding machines that machine 2 flows to at a distance of 1
+  .  .  .  .
+  .  .  .  3
+  .  9 10  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 2 flows to at a distance of 2
+  .  .  .  5
+  .  .  4  3
+  .  9 10  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 3 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  .  9 10  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 4 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  .  9 10  2
+  8  6  1  7
+---------------------------
+Adding machines that machine 5 flows to at a distance of 1
+  .  .  .  5
+  .  .  4  3
+  .  9 10  2
+  8  6  1  7
+---------------------------
+Setup after initial assignment:
+  .  .  .  5
+  .  .  4  3
+  .  9 10  2
+  8  6  1  7
+Total cost = $2497.00
+--------------------------
+
+Switched machines 1 and 8
+Total cost = $2181.00
+--------------------------
+
+Switched machines 2 and 3
+Total cost = $2004.00
+--------------------------
+
+Switched machines 2 and 4
+Total cost = $1967.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1939.00
+--------------------------
+
+Switched machines 2 and 10
+Total cost = $1927.00
+--------------------------
+
+Switched machines 3 and 7
+Total cost = $1800.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1796.00
+--------------------------
+
+Switched machines 2 and 8
+Total cost = $1791.00
+--------------------------
+
+Switched machines 1 and 2
+Total cost = $1780.00
+--------------------------
+
+Switched machines 1 and 5
+Total cost = $1761.00
+--------------------------
+
+Switched machines 2 and 5
+Total cost = $1680.00
+--------------------------
+
+Switched machines 5 and 9
+Total cost = $1671.00
+--------------------------
+
+Switched machines 6 and 9
+Total cost = $1639.00
+--------------------------
+
+Switched machines 1 and 4
+Total cost = $1618.00
+--------------------------
+
+Setup after switching:
+  .  .  . 10
+  .  .  8  1
+  .  5  4  7
+  6  9  2  3
+Total cost = $1618.00
+--------------------------
+
+Reseting Factory
+--------------------------
+
+Best setup found:
+  .  .  .  .
+  .  1 10  .
+  7  3  6  9
+  4  8  2  5
+Total cost = $1475.00
